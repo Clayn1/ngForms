@@ -1,0 +1,18 @@
+<form [formGroup]="form">
+  <div>
+    <input formControlName="title">
+  </div>
+  <div>
+    <input formControlName="body">
+  </div>
+  <div>
+    <select formControlName="type">
+      <option value="urgent">Срочно</option>
+      <option value="not-urgent">Не срочно</option>
+      <option value="three-years">Через 3 года</option>
+    </select>
+  </div>
+</form>
+<button (click)="addTask(form)" [disabled]="form.invalid">save</button>
+
+<app-all-tasks [tasks]="tasks"></app-all-tasks>
